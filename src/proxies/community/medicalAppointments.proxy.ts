@@ -8,7 +8,7 @@ import { io } from '../../app';
 const targetUrl: string = ServerURL.targetUrlCommunity
 
 const list = (req: Request, res: Response, next: NextFunction) => {
-
+  console.log("Listando cita medica")
   const IdBaby: string = req.params.IdBaby ?? "0"
   // console.log("Listando citas medicas de ", { IdBaby })
   io.emit('guardarCitaMedica', { data: 'refresh' });
@@ -22,7 +22,8 @@ const list = (req: Request, res: Response, next: NextFunction) => {
 
 
 const save = (req: Request, res: Response, next: NextFunction) => {
-  return proxy(targetUrl, {
+  console.log("Guardando cita medica")
+    return proxy(targetUrl, {
     proxyReqPathResolver: (req: Request) => {
       return `/medical-appointment/save`;
     },

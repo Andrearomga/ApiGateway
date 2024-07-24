@@ -7,7 +7,7 @@ import ServerURL from '../../config/servers.config';
 const targetUrl: string = ServerURL.targetUrlInformationManagement
 
 const list = (req: Request, res: Response, next: NextFunction) => {
-  // console.log("Listando")
+  console.log("Listando sueños")
   const IdBaby: string = req.params.IdBaby ?? "";
   return proxy(targetUrl, {
     proxyReqPathResolver: (req: Request) => {

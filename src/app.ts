@@ -55,7 +55,7 @@ setInterval(() => {
     // Aquí puedes realizar la acción deseada, por ejemplo, emitir un evento a todos los clientes conectados
     io.emit('tick', { data: 'refresh' });
 
-}, 10000);
+}, 60000);
 
 const PORT = process.env.PORT || 3000;
 

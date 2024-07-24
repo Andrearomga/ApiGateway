@@ -7,8 +7,8 @@ import { io } from '../../app';
 const targetUrl: string = ServerURL.targetUrlInformationManagement
 
 const save = (req: Request, res: Response, next: NextFunction) => {  
-  
-  // console.log(req.body)
+  console.log("guardando baby")
+  console.log(req.body)
   io.emit('guardarBebe', { data: 'refresh' });
   return proxy(targetUrl, {
     proxyReqPathResolver: (req: Request) => {
@@ -20,7 +20,7 @@ const save = (req: Request, res: Response, next: NextFunction) => {
 
 const getBabyById = (req: Request, res: Response, next: NextFunction) => {  
   
-  console.log("Obteniendo bebe")
+  // console.log("Obteniendo bebe")
   const IdBaby : number = isNaN(Number(req.params.IdBaby)) ? 0: Number(req.params.IdBaby);    
 
   return proxy(targetUrl, {
